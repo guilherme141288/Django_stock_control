@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Stock Manager - Novas Lojas {% endblock title %}
+{% block content %}
+{% load static %}
+
+
+<form method="post">
+    {% csrf_token %}
+    
+  <div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Criar Loja</h1>
+      <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+          For more information about DataTables, please visit the </p>
+
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Nome da Loja</label>
+      
+      {{form.name}}
+  <!--    <input class="form-control" type="text" id="formFile">-->
+    </div>
+    <div class="mb-3">
+      <label for="formFileMultiple" class="form-label">CNPJ</label>
+      {{form.cnpj}}
+    </div>
+    <div class="mb-3">
+      <label for="formFileDisabled" class="form-label">Foto de perfil da loja</label>
+      {{form.image}}
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Endereço</label>
+      {{form.address}}
+    </div>
+    
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Cidade</label>
+      {{form.city}}
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Estado</label>
+      {{form.state}}
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Cadastrar Loja</button>
+    <button type="button" class="btn btn-secondary">Voltar</button>
+  
+  </div>
+  </form>
+  {% endblock content %}
